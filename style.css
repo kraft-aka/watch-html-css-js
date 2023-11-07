@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #92ece9;
+  animation-name: bg;
+  animation-duration: 5s;
+}
+
+.watch-container {
+  width: 25rem;
+  height: 25rem;
+  display: block;
+  margin: 25rem auto;
+}
+
+.watch-face {
+  animation-name: move show;
+  animation-duration: 2s;
+  width: 25rem;
+  height: 25rem;
+  background-color: azure;
+  border-radius: 10%;
+  border: inset 20px #111;
+  box-shadow: 25px 35px 12px rgba(0, 0, 0, 0.30);
+  position: relative;
+  animation-name: show, move;
+  animation-duration: 2s 2s;
+}
+
+.center {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #111;
+  border-radius: 50%;
+  position: absolute;
+  top: 10.3rem;
+  left: 10.3rem;
+}
+
+
+.watch {
+  width: 10rem;
+  background-color: #111;
+  position: absolute;
+  top: 11rem;
+  left: 1rem;
+  transform-origin: 100%;
+  border-radius: .25rem;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.30);
+}
+
+.hand-hour {
+  height: 1rem;
+}
+
+.hand-min {
+  height: .7rem;
+}
+
+.hand-sec {
+  height: .5rem;
+}
+
+@media screen and (max-width: 400px) {
+
+  .watch-container,
+  .watch-face {
+    width: 250px;
+    height: 250px;
+    margin: 50% auto;
+  }
+
+  .watch-face {
+    border: inset 10px #111;
+  }
+
+  .watch {
+    top: 6.4rem;
+    left: 1rem;
+    width: 6rem;
+  }
+
+  .center {
+    top: 6rem;
+    left: 6.5rem;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bg {
+  from {
+    background-color: #000;
+  }
+
+  to {
+    background-color: #92ece9;
+  }
+}
